@@ -152,7 +152,7 @@ export default function Weddings() {
               </li>
             </ul>
 
-            <button className="btn btn-primary styles.calcBtn" onClick={handleInquiry}>
+            <button className={`btn btn-primary ${styles.calcBtn}`} onClick={handleInquiry}>
               Inquire Configuration
             </button>
           </div>

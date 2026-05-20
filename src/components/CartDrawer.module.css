@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   background-color: rgba(46, 30, 22, 0.4); /* Espresso with alpha */
   backdrop-filter: blur(4px);
   z-index: 200;
@@ -23,7 +23,7 @@
   right: 0;
   width: 100%;
   max-width: 480px;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--mascarpone);
   z-index: 210;
   transform: translateX(100%);
@@ -330,8 +330,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   background-color: rgba(46, 30, 22, 0.6);
   z-index: 300;
   display: flex;

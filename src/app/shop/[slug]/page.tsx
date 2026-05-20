@@ -3,7 +3,6 @@
 import React, { useState, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { PRODUCTS } from "@/data/products";
 import styles from "./page.module.css";
@@ -14,7 +13,6 @@ interface PageProps {
 
 export default function ProductDetail({ params }: PageProps) {
   const resolvedParams = use(params);
-  const router = useRouter();
   const { addToCart } = useCart();
   
   const product = PRODUCTS.find((p) => p.slug === resolvedParams.slug);
@@ -167,7 +165,7 @@ export default function ProductDetail({ params }: PageProps) {
                   +
                 </button>
               </div>
-              <button className="btn btn-primary styles.buyBtn" onClick={handleAddToCart}>
+              <button className={`btn btn-primary ${styles.buyBtn}`} onClick={handleAddToCart}>
                 Add to Cart
               </button>
             </div>

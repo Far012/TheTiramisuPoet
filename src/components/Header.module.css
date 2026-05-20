@@ -6,20 +6,22 @@
   height: 90px;
   z-index: 100;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
+  background-color: rgba(255, 250, 243, 0.74);
+  border-bottom: 1px solid rgba(36, 23, 19, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .shrunk {
   height: 70px;
-  background-color: rgba(251, 249, 246, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--blush);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  background-color: rgba(255, 250, 243, 0.92);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(36, 23, 19, 0.06);
 }
 
 .container {
+  width: 100%;
+  min-width: 0;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -30,18 +32,22 @@
 }
 
 .logo {
-  font-family: var(--font-cormorant), serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--espresso);
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.4s ease;
   user-select: none;
 }
 
 .logo:hover {
   transform: scale(1.02);
+}
+
+.logoImage {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
 }
 
 .navGroup {
@@ -61,7 +67,7 @@
 
 .navLink {
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--espresso);
@@ -85,19 +91,32 @@
   color: var(--cocoa);
 }
 
-.navLink:hover::after {
+.navLink:hover::after,
+.navLinkActive::after {
   width: 100%;
+}
+
+.navLinkActive {
+  color: var(--berry);
+}
+
+.navLinkActive::after {
+  background-color: var(--berry);
 }
 
 .actions {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 1.5rem;
 }
 
 .cartBtn {
-  background: none;
-  border: none;
+  min-width: 40px;
+  min-height: 40px;
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(36, 23, 19, 0.12);
+  border-radius: 999px;
   cursor: pointer;
   position: relative;
   padding: 8px;
@@ -109,7 +128,8 @@
 }
 
 .cartBtn:hover {
-  transform: scale(1.05);
+  background: var(--porcelain);
+  transform: translateY(-1px);
 }
 
 .cartIcon {
@@ -122,10 +142,10 @@
 
 .cartCount {
   position: absolute;
-  top: -2px;
-  right: -2px;
-  background-color: var(--espresso);
-  color: var(--mascarpone);
+  top: -4px;
+  right: -4px;
+  background-color: var(--berry);
+  color: var(--white);
   font-size: 0.65rem;
   font-weight: 600;
   width: 16px;
@@ -141,10 +161,12 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 20px;
-  height: 14px;
-  background: none;
-  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 12px 10px;
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(36, 23, 19, 0.12);
+  border-radius: 999px;
   cursor: pointer;
   z-index: 110;
   color: var(--espresso);
@@ -173,7 +195,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: var(--mascarpone);
   z-index: 105;
@@ -185,6 +207,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 6rem 1.5rem 2rem;
 }
 
 .mobileOverlayActive {
@@ -201,13 +224,40 @@
   .header {
     height: 70px;
   }
+  .container {
+    position: relative;
+    justify-content: flex-start;
+  }
   .navGroup {
     display: none;
+  }
+  .actions {
+    position: static;
+    margin-left: 0.75rem;
+    gap: 0.5rem;
+    transform: none;
   }
   .hamburger {
     display: flex;
   }
   .logo {
-    font-size: 1.3rem;
+    margin-right: auto;
+  }
+  .logoImage {
+    width: 142px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding-inline: 1rem;
+  }
+
+  .actions {
+    gap: 0.75rem;
+  }
+
+  .logoImage {
+    width: 132px;
   }
 }

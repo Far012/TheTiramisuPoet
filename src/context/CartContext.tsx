@@ -49,24 +49,30 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     zipCode: "",
   });
 
-  // LocalStorage sync
   useEffect(() => {
-    const savedCart = localStorage.getItem("tiramisu_poet_cart");
-    const savedInfo = localStorage.getItem("tiramisu_poet_delivery");
-    if (savedCart) {
-      try {
-        setCart(JSON.parse(savedCart));
-      } catch (e) {
-        console.error(e);
+    const loadStoredCart = () => {
+      const savedCart = localStorage.getItem("tiramisu_poet_cart");
+      const savedInfo = localStorage.getItem("tiramisu_poet_delivery");
+
+      if (savedCart) {
+        try {
+          setCart(JSON.parse(savedCart));
+        } catch (e) {
+          console.error(e);
+        }
       }
-    }
-    if (savedInfo) {
-      try {
-        setDeliveryInfo(JSON.parse(savedInfo));
-      } catch (e) {
-        console.error(e);
+
+      if (savedInfo) {
+        try {
+          setDeliveryInfo(JSON.parse(savedInfo));
+        } catch (e) {
+          console.error(e);
+        }
       }
-    }
+    };
+
+    const timeoutId = window.setTimeout(loadStoredCart, 0);
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   const saveCartToStorage = (newCart: CartItem[]) => {

@@ -62,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jakarta.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${cormorant.variable} ${jakarta.variable}`}>
       <body>
         <CartProvider>
           <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>

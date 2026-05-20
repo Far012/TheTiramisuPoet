@@ -206,13 +206,13 @@ export default function Shop() {
                     <div className={styles.cardFooter}>
                       <Link
                         href={`/shop/${product.slug}`}
-                        className="btn btn-outline styles.cardBtn"
+                        className={`btn btn-outline ${styles.cardBtn}`}
                         style={{ textAlign: "center" }}
                       >
                         Details
                       </Link>
                       <button
-                        className="btn btn-primary styles.cardBtn"
+                        className={`btn btn-primary ${styles.cardBtn}`}
                         onClick={() => handleAddToCart(product)}
                       >
                         Add to Cart

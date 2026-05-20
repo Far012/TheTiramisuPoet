@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Newsletter Column */}
           <div className={styles.newsletterCol}>
-            <h4 className={styles.title}>The Poet's Club</h4>
+            <h4 className={styles.title}>The Poet&apos;s Club</h4>
             {!isSubmitted ? (
               <>
                 <p className={styles.newsletterText}>
@@ -131,7 +131,7 @@ export default function Footer() {
               </>
             ) : (
               <p className={styles.successMsg}>
-                Thank you. You are now part of the Poet's Club. ✨
+                Thank you. You are now part of the Poet&apos;s Club. ✨
               </p>
             )}
           </div>

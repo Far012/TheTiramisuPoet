@@ -91,7 +91,7 @@ export default function Catering() {
       <section className={`${styles.ctaSection} section-padding`}>
         <div className="container">
           <div className={styles.ctaCard}>
-            <h2 className="title-section" style={{ marginBottom: "0.5rem" }}>Let's plan together.</h2>
+            <h2 className="title-section" style={{ marginBottom: "0.5rem" }}>Let&apos;s plan together.</h2>
             <p className={styles.text} style={{ textAlign: "center" }}>
               No matter the scale of your event, we design the perfect dessert concept. Contact our studio for a custom, non-binding quote.
             </p>

@@ -25,9 +25,12 @@ export default function CartDrawer() {
   });
   const [showCheckoutSuccess, setShowCheckoutSuccess] = useState(false);
 
-  // Sync state if context changes
   useEffect(() => {
-    setZipCode(deliveryInfo.zipCode);
+    const timeoutId = window.setTimeout(() => {
+      setZipCode(deliveryInfo.zipCode);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, [deliveryInfo.zipCode]);
 
   // Disable background scrolling when drawer is open
@@ -298,7 +301,7 @@ export default function CartDrawer() {
               <span className={styles.totalVal}>{cartTotal.toFixed(2)} &euro;</span>
             </div>
             
-            <button className="btn btn-primary checkoutBtn" onClick={handleCheckout}>
+            <button className={`btn btn-primary ${styles.checkoutBtn}`} onClick={handleCheckout}>
               Proceed to Checkout
             </button>
             <p className={styles.checkoutNote}>

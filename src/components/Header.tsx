@@ -7,6 +7,17 @@ import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import styles from "./Header.module.css";
 
+const LEFT_NAV = [
+  { href: "/shop", label: "Shop" },
+  { href: "/weddings", label: "Weddings & Events" },
+  { href: "/catering", label: "Catering" },
+];
+
+const RIGHT_NAV = [
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
 export default function Header() {
   const [isShrunk, setIsShrunk] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,58 +33,67 @@ export default function Header() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen((isOpen) => !isOpen);
+  };
+
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
+  const renderNavLink = (item: { href: string; label: string }) => {
+    const active = isActive(item.href);
+
+    return (
+      <Link
+        key={item.href}
+        href={item.href}
+        className={`${styles.navLink} ${active ? styles.navLinkActive : ""}`}
+        aria-current={active ? "page" : undefined}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        {item.label}
+      </Link>
+    );
   };
 
   return (
     <header className={`${styles.header} ${isShrunk ? styles.shrunk : ""} ${isMobileMenuOpen ? styles.mobileMenuOpen : ""}`}>
       <div className={styles.container}>
-        {/* Left Nav (Desktop) */}
         <nav className={`${styles.navGroup} ${styles.leftNav}`}>
-          <Link href="/shop" className={styles.navLink}>
-            Shop
-          </Link>
-          <Link href="/weddings" className={styles.navLink}>
-            Weddings & Events
-          </Link>
-          <Link href="/catering" className={styles.navLink}>
-            Catering
-          </Link>
+          {LEFT_NAV.map(renderNavLink)}
         </nav>
 
-        {/* Brand Logo */}
-        <Link href="/" className={styles.logo} style={{ display: "flex", alignItems: "center" }}>
+        <Link href="/" className={styles.logo} aria-label="The Tiramisu Poet home">
           <Image
             src="/logo_text_only.png"
             alt="The Tiramisu Poet"
             width={180}
             height={40}
-            style={{ objectFit: "contain", height: "auto" }}
+            className={styles.logoImage}
+            style={{ height: "auto" }}
             priority
           />
         </Link>
 
-        {/* Right Nav (Desktop) */}
         <nav className={`${styles.navGroup} ${styles.rightNav}`}>
-          <Link href="/about" className={styles.navLink}>
-            About
-          </Link>
-          <Link href="/contact" className={styles.navLink}>
-            Contact
-          </Link>
+          {RIGHT_NAV.map(renderNavLink)}
         </nav>
 
-        {/* Actions (Cart & Hamburger) */}
         <div className={styles.actions}>
           <button
             className={styles.cartBtn}
@@ -102,6 +122,8 @@ export default function Header() {
             className={styles.hamburger}
             onClick={toggleMobileMenu}
             aria-label="Menü umschalten"
+            aria-controls="mobile-navigation"
+            aria-expanded={isMobileMenuOpen}
           >
             <span />
             <span />
@@ -110,27 +132,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Overlay */}
       <div
+        id="mobile-navigation"
         className={`${styles.mobileOverlay} ${
           isMobileMenuOpen ? styles.mobileOverlayActive : ""
         }`}
       >
-        <Link href="/shop" className={styles.navLink}>
-          Shop
-        </Link>
-        <Link href="/weddings" className={styles.navLink}>
-          Weddings & Events
-        </Link>
-        <Link href="/catering" className={styles.navLink}>
-          Catering
-        </Link>
-        <Link href="/about" className={styles.navLink}>
-          About
-        </Link>
-        <Link href="/contact" className={styles.navLink}>
-          Contact
-        </Link>
+        {[...LEFT_NAV, ...RIGHT_NAV].map(renderNavLink)}
       </div>
     </header>
   );

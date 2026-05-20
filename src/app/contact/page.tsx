@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -17,42 +17,47 @@ interface FormData {
   phone: string;
 }
 
+const DEFAULT_FORM_DATA: FormData = {
+  eventType: "wedding",
+  date: "",
+  location: "",
+  guests: "50",
+  packageType: "cups",
+  notes: "",
+  name: "",
+  email: "",
+  phone: "",
+};
+
+function getInitialFormData(searchParams: ReturnType<typeof useSearchParams>): FormData {
+  const guestsParam = searchParams.get("guests");
+  const typeParam = searchParams.get("type");
+  const cupsParam = searchParams.get("cups");
+
+  if (!guestsParam && !typeParam && !cupsParam) {
+    return DEFAULT_FORM_DATA;
+  }
+
+  return {
+    ...DEFAULT_FORM_DATA,
+    eventType: typeParam === "wedding" ? "wedding" : typeParam === "corporate" ? "corporate" : "catering",
+    guests: guestsParam || DEFAULT_FORM_DATA.guests,
+    packageType: typeParam === "wedding" ? "wedding_tower" : DEFAULT_FORM_DATA.packageType,
+    notes: cupsParam
+      ? `Requested via Wedding Configurator: ${cupsParam} cups recommended for ${guestsParam} guests.`
+      : DEFAULT_FORM_DATA.notes,
+  };
+}
+
 function ContactForm() {
   const searchParams = useSearchParams();
 
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState<FormData>({
-    eventType: "wedding",
-    date: "",
-    location: "",
-    guests: "50",
-    packageType: "cups",
-    notes: "",
-    name: "",
-    email: "",
-    phone: "",
-  });
+  const [formData, setFormData] = useState<FormData>(() => getInitialFormData(searchParams));
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  // Pre-fill form from URL query parameters (e.g. from Wedding calculator)
-  useEffect(() => {
-    const guestsParam = searchParams.get("guests");
-    const typeParam = searchParams.get("type");
-    const cupsParam = searchParams.get("cups");
-
-    if (guestsParam || typeParam || cupsParam) {
-      setFormData((prev) => ({
-        ...prev,
-        eventType: typeParam === "wedding" ? "wedding" : typeParam === "corporate" ? "corporate" : "catering",
-        guests: guestsParam || prev.guests,
-        packageType: typeParam === "wedding" ? "wedding_tower" : prev.packageType,
-        notes: cupsParam ? `Requested via Wedding Configurator: ${cupsParam} cups recommended for ${guestsParam} guests.` : prev.notes,
-      }));
-    }
-  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -225,7 +230,7 @@ function ContactForm() {
             <div className={styles.buttonRow}>
               <button
                 type="button"
-                className="btn btn-primary styles.navBtn"
+                className={`btn btn-primary ${styles.navBtn}`}
                 onClick={handleNext}
                 style={{ width: "100%" }}
               >
@@ -287,14 +292,14 @@ function ContactForm() {
             <div className={styles.buttonRow}>
               <button
                 type="button"
-                className="btn btn-outline styles.navBtn"
+                className={`btn btn-outline ${styles.navBtn}`}
                 onClick={handlePrev}
               >
                 Back
               </button>
               <button
                 type="button"
-                className="btn btn-primary styles.navBtn"
+                className={`btn btn-primary ${styles.navBtn}`}
                 onClick={handleNext}
               >
                 Next
@@ -355,7 +360,7 @@ function ContactForm() {
             <div className={styles.buttonRow}>
               <button
                 type="button"
-                className="btn btn-outline styles.navBtn"
+                className={`btn btn-outline ${styles.navBtn}`}
                 onClick={handlePrev}
                 disabled={loading}
               >
@@ -363,7 +368,7 @@ function ContactForm() {
               </button>
               <button
                 type="submit"
-                className="btn btn-primary styles.navBtn"
+                className={`btn btn-primary ${styles.navBtn}`}
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Submit Inquiry"}

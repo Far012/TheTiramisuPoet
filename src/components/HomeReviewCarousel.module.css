@@ -1,0 +1,91 @@
+.reviews {
+  background:
+    linear-gradient(180deg, var(--mascarpone) 0%, var(--porcelain) 100%);
+  text-align: center;
+}
+
+.header {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.review {
+  max-width: 860px;
+  margin: 3rem auto 0;
+  padding-inline: 1rem;
+}
+
+.review blockquote {
+  color: var(--espresso);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 2.15rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.42;
+  text-wrap: balance;
+}
+
+.review figcaption {
+  display: grid;
+  gap: 0.2rem;
+  margin-top: 1.5rem;
+  color: var(--cocoa);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.review figcaption span {
+  color: var(--espresso);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--cocoa);
+  cursor: pointer;
+}
+
+.dot::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.35;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.dot:hover::before,
+.dotActive::before {
+  background: var(--espresso);
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+@media (max-width: 720px) {
+  .review {
+    margin-top: 2rem;
+  }
+
+  .review blockquote {
+    font-size: 1.55rem;
+  }
+}
