@@ -44,6 +44,7 @@
 .heroCopy {
   min-width: 0;
   max-width: 760px;
+  transform: translateY(-8px);
 }
 
 .eyebrow,
