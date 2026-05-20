@@ -292,7 +292,7 @@ svg {
   border: 1px solid var(--blush);
   border-radius: 4px;
   color: var(--espresso);
-  font-size: 0.9rem;
+  font-size: 1rem; /* Crucial: 16px (1rem) minimum prevents iOS Safari from auto-zooming and breaking layouts on focus */
   outline: none;
   transition: all 0.3s ease;
 }
