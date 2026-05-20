@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
   keywords: "premium tiramisu, tiramisu catering, wedding dessert catering, tiramisu cups, dessert catering, custom tiramisu, tiramisu tower",
   icons: {
-    icon: "/logo_text_only.png",
-    apple: "/logo_text_only.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
   openGraph: {
     title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "The Tiramisu Poet",
     images: [
       {
-        url: "/logo.png",
+        url: "/opengraph.png",
         width: 1200,
         height: 630,
         alt: "The Tiramisu Poet Premium Dessert Branding",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
     description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
-    images: ["/logo.png"],
+    images: ["/opengraph.png"],
   },
 };
 
