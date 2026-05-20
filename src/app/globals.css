@@ -283,10 +283,10 @@ svg {
 
 .form-input, .form-select, .form-textarea {
   display: block;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
   padding: 0.75rem 1rem;
   background-color: var(--cream);
   border: 1px solid var(--blush);
@@ -295,6 +295,29 @@ svg {
   font-size: 1rem; /* Crucial: 16px (1rem) minimum prevents iOS Safari from auto-zooming and breaking layouts on focus */
   outline: none;
   transition: all 0.3s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Custom premium dropdown arrow for select elements */
+.form-select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23241713' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.1em;
+  padding-right: 2.5rem !important;
+}
+
+/* Custom premium calendar icon for date input elements */
+input[type="date"].form-input,
+.form-input[type="date"] {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23241713' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3e%3c/rect%3e%3cline x1='16' y1='2' x2='16' y2='6'%3e%3c/line%3e%3cline x1='8' y1='2' x2='8' y2='6'%3e%3c/line%3e%3cline x1='3' y1='10' x2='21' y2='10'%3e%3c/line%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.1em;
+  padding-right: 2.5rem !important;
+  min-height: 2.8rem; /* Ensure standard height on iOS when appearance: none is applied */
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
