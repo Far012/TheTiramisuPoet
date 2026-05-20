@@ -71,7 +71,7 @@
 .content {
   flex: 1;
   overflow-y: auto;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 3.5rem 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -204,7 +204,7 @@
 .deliveryForm {
   border-top: 1px solid var(--blush);
   padding-top: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
 }
 
 .sectionTitle {
