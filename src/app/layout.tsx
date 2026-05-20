@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "The Tiramisu Poet",
     images: [
       {
-        url: "/opengraph.png",
+        url: "/opengraph.jpg",
         width: 1200,
         height: 630,
         alt: "The Tiramisu Poet Premium Dessert Branding",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
     description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
-    images: ["/opengraph.png"],
+    images: ["/opengraph.jpg"],
   },
 };
 
