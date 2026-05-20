@@ -54,20 +54,31 @@ export default function CartDrawer() {
 
   const handleZipCheck = () => {
     if (!zipCode) {
-      setZipCheck({ status: "error", message: "Please enter a zip code." });
+      setZipCheck({ status: "error", message: "Please enter a postal code." });
       return;
     }
-    // Simulate check: Munich area starting with 80 or 81
-    if (/^(80|81)\d{3}$/.test(zipCode)) {
+    const cleanCode = zipCode.trim().toUpperCase().replace(/\s+/g, "");
+    if (!/^[A-Z]\d[A-Z]\d[A-Z]\d$/.test(cleanCode)) {
+      setZipCheck({ status: "error", message: "Invalid postal code format (e.g. L3Z 0W4)." });
+      return;
+    }
+
+    if (cleanCode.startsWith("L3Z")) {
       setZipCheck({
         status: "success",
-        message: "Delivery area verified! Chilled delivery is available.",
+        message: "Delivery area verified! Chilled delivery is available in Bradford.",
       });
-      setDeliveryInfo({ ...deliveryInfo, zipCode });
+      setDeliveryInfo({ ...deliveryInfo, zipCode: cleanCode });
+    } else if (cleanCode.startsWith("L") || cleanCode.startsWith("M")) {
+      setZipCheck({
+        status: "success",
+        message: "Extended delivery area! Delivery is available in GTA / Simcoe County.",
+      });
+      setDeliveryInfo({ ...deliveryInfo, zipCode: cleanCode });
     } else {
       setZipCheck({
         status: "error",
-        message: "Outside delivery area (ZIP 80xxx / 81xxx). Only studio pickup is available.",
+        message: "Outside delivery area. Only studio pickup is available at 73 Algeo Wy.",
       });
     }
   };
@@ -81,14 +92,7 @@ export default function CartDrawer() {
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedDate = e.target.value;
-    const day = new Date(selectedDate).getDay(); // 0 = Sunday, 1 = Monday
-    
-    if (day === 0 || day === 1) {
-      alert("Our studio is closed on Sundays and Mondays. Please select a date from Tuesday to Saturday.");
-      setDeliveryInfo({ ...deliveryInfo, date: "" });
-    } else {
-      setDeliveryInfo({ ...deliveryInfo, date: selectedDate });
-    }
+    setDeliveryInfo({ ...deliveryInfo, date: selectedDate });
   };
 
   const handleTimeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -193,7 +197,7 @@ export default function CartDrawer() {
                           </button>
                         </div>
                         <span className={styles.price}>
-                          {(item.price * item.quantity).toFixed(2)} &euro;
+                          ${(item.price * item.quantity).toFixed(2)}
                         </span>
                         <button
                           className={styles.removeBtn}
@@ -237,11 +241,11 @@ export default function CartDrawer() {
                       <input
                         id="zipcode-input"
                         type="text"
-                        placeholder="e.g. 80331"
-                        maxLength={5}
+                        placeholder="e.g. L3Z 0W4"
+                        maxLength={7}
                         className="form-input"
                         value={zipCode}
-                        onChange={(e) => setZipCode(e.target.value.replace(/\D/g, ""))}
+                        onChange={(e) => setZipCode(e.target.value)}
                       />
                       <button className={styles.zipBtn} onClick={handleZipCheck}>
                         Verify
@@ -298,7 +302,7 @@ export default function CartDrawer() {
           <div className={styles.footer}>
             <div className={styles.totalRow}>
               <span className={styles.totalLabel}>Subtotal</span>
-              <span className={styles.totalVal}>{cartTotal.toFixed(2)} &euro;</span>
+              <span className={styles.totalVal}>${cartTotal.toFixed(2)}</span>
             </div>
             
             <button className={`btn btn-primary ${styles.checkoutBtn}`} onClick={handleCheckout}>
@@ -331,11 +335,11 @@ export default function CartDrawer() {
                 fontSize: "0.8125rem",
               }}
             >
-              <p><strong>Type:</strong> {deliveryInfo.type === "pickup" ? "Studio Pickup" : `Delivery to ZIP ${deliveryInfo.zipCode}`}</p>
+              <p><strong>Type:</strong> {deliveryInfo.type === "pickup" ? "Studio Pickup" : `Delivery to Postal Code ${deliveryInfo.zipCode}`}</p>
               <p><strong>Date:</strong> {new Date(deliveryInfo.date).toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}</p>
               <p><strong>Time:</strong> {deliveryInfo.time}</p>
               <p style={{ borderTop: "1px solid var(--blush)", marginTop: "0.5rem", paddingTop: "0.5rem" }}>
-                <strong>Total:</strong> {cartTotal.toFixed(2)} &euro;
+                <strong>Total:</strong> ${cartTotal.toFixed(2)}
               </p>
             </div>
             <p className={styles.modalText} style={{ fontSize: "0.8125rem" }}>

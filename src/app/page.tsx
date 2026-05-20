@@ -171,7 +171,7 @@ export default function Home() {
                     <p className={styles.productText}>{product.descriptor}</p>
                   </div>
                   <div className={styles.productFooter}>
-                    <p className={styles.productPrice}>from {product.price.toFixed(2)} &euro;</p>
+                    <p className={styles.productPrice}>from ${product.price.toFixed(2)}</p>
                     {product.action === "link" ? (
                       <Link href={product.href} className={`${styles.productAction} btn btn-outline`}>
                         Explore

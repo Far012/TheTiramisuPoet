@@ -20,7 +20,7 @@ export const PRODUCTS: Product[] = [
     dietary: ["alcohol-free"],
     description: "Our signature cups bring the luxury of an Italian patisserie directly to your home. Finest espresso, gently soaked biscuits, and an incomparably creamy mascarpone blend are topped with an elegant layer of cocoa. Each cup is individually decorated.",
     shortDescription: "The perfect balance of tradition and modernity, portioned in elegant single cups. (Box of 6)",
-    variants: ["Box of 6 Classic", "Box of 12 Classic (+ 35.00 €)", "Box of 6 Alcohol-Free"],
+    variants: ["Box of 6 Classic", "Box of 12 Classic (+ $35.00)", "Box of 6 Alcohol-Free"],
   },
   {
     name: "Mini Dessert Cups (Party Mix)",
@@ -42,7 +42,7 @@ export const PRODUCTS: Product[] = [
     dietary: [],
     description: "The absolute classic for social gatherings. Served in a stylish, reusable tray. Handcrafted layer by layer according to our patissier's original recipe.",
     shortDescription: "The traditional Italian dessert tray for your exclusive dinner event at home.",
-    variants: ["Medium (6-8 guests)", "Large (10-12 guests) (+ 20.00 €)"],
+    variants: ["Medium (6-8 guests)", "Large (10-12 guests) (+ $20.00)"],
   },
   {
     name: "Amaretto Dream Tray",
@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
     dietary: [],
     description: "For lovers of rich nut aromas. Refined with a fine dash of aged Italian Amaretto and decorated with toasted almond flakes.",
     shortDescription: "Refined with authentic Italian Amaretto liqueur and toasted almonds.",
-    variants: ["Medium (6-8 guests)", "Large (10-12 guests) (+ 20.00 €)"],
+    variants: ["Medium (6-8 guests)", "Large (10-12 guests) (+ $20.00)"],
   },
   {
     name: "Bespoke Poet's Gift Box",

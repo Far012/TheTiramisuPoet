@@ -201,7 +201,7 @@ export default function Shop() {
                   <div className={styles.productInfo}>
                     <h2 className={styles.productTitle}>{product.name}</h2>
                     <p className={styles.productShortDesc}>{product.shortDescription}</p>
-                    <p className={styles.productPrice}>{product.price.toFixed(2)} &euro;</p>
+                    <p className={styles.productPrice}>${product.price.toFixed(2)}</p>
                     
                     <div className={styles.cardFooter}>
                       <Link

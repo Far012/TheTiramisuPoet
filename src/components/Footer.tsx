@@ -35,14 +35,14 @@ export default function Footer() {
               Handcrafted tiramisu masterworks and luxury dessert experiences for weddings, events, and unforgettable moments.
             </p>
             <div className={styles.socials}>
-              <a href="#" className={styles.socialIcon} aria-label="Instagram">
+              <a href="https://www.instagram.com/thetiramisupoet/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
                 Instagram
               </a>
-              <a href="#" className={styles.socialIcon} aria-label="TikTok">
+              <a href="https://www.tiktok.com/@the.tiramisu.poet" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="TikTok">
                 TikTok
               </a>
-              <a href="#" className={styles.socialIcon} aria-label="Pinterest">
-                Pinterest
+              <a href="https://share.google/p5kdWLkpBeVm40RlI" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Google Maps">
+                Google
               </a>
             </div>
           </div>

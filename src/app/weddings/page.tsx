@@ -128,7 +128,7 @@ export default function Weddings() {
               </div>
               <div className={styles.resultItem} style={{ gridColumn: "span 2", marginTop: "1rem" }}>
                 <span className={styles.resultLabel}>Estimated Budget</span>
-                <span className={styles.resultVal}>approx. {totalEstimate.toFixed(2)} &euro;</span>
+                <span className={styles.resultVal}>approx. ${totalEstimate.toFixed(2)}</span>
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export default function Weddings() {
               </li>
               <li className={styles.benefitItem}>
                 <span className={styles.benefitIcon}>✔</span>
-                <span>Chilled delivery &amp; setup at venue (Munich area)</span>
+                <span>Chilled delivery &amp; setup at venue (Bradford &amp; GTA)</span>
               </li>
             </ul>
 

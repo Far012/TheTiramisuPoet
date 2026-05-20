@@ -218,7 +218,7 @@ function ContactForm() {
                   id="location-input"
                   type="text"
                   name="location"
-                  placeholder="e.g. Munich (pickup or chilled delivery)"
+                  placeholder="e.g. Bradford, Toronto (pickup or chilled delivery)"
                   className="form-input"
                   value={formData.location}
                   onChange={handleChange}

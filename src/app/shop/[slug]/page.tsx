@@ -42,9 +42,9 @@ export default function ProductDetail({ params }: PageProps) {
   // Calculate price dynamically based on variant name adjustments
   const getAdjustedPrice = () => {
     let basePrice = product.price;
-    if (selectedVariant.includes("+ 35.00") || selectedVariant.includes("+ 35,00")) {
+    if (selectedVariant.includes("35.00")) {
       basePrice += 35.0;
-    } else if (selectedVariant.includes("+ 20.00") || selectedVariant.includes("+ 20,00")) {
+    } else if (selectedVariant.includes("20.00")) {
       basePrice += 20.0;
     }
     return basePrice;
@@ -97,7 +97,7 @@ export default function ProductDetail({ params }: PageProps) {
           <div className={styles.info}>
             <h1 className={styles.title}>{product.name}</h1>
             <p className={styles.shortDesc}>{product.shortDescription}</p>
-            <p className={styles.price}>{currentPrice.toFixed(2)} &euro;</p>
+            <p className={styles.price}>${currentPrice.toFixed(2)}</p>
 
             {/* Variant Selector */}
             <div className={styles.optionsSection}>
@@ -137,7 +137,7 @@ export default function ProductDetail({ params }: PageProps) {
                 />
                 <div style={{ display: "flex", justifyContent: "space-between", marginTop: "0.25rem" }}>
                   <span className={styles.engravingDesc}>
-                    Delicate lettering dusted on cocoa (+ 3.00 &euro; in official store)
+                    Delicate lettering dusted on cocoa (+ $3.00 in official store)
                   </span>
                   <span className={styles.engravingDesc}>
                     {engraving.length} / 15 chars
@@ -226,9 +226,9 @@ export default function ProductDetail({ params }: PageProps) {
                   <div className={styles.accordionContent}>
                     As these are ultra-fresh dessert specialties, order lead time is at least <strong>48 hours</strong>.
                     <br /><br />
-                    <strong>Studio Pickup:</strong> Free at our atelier (Tuesday to Saturday from 10:00 AM to 6:00 PM).
+                    <strong>Studio Pickup:</strong> Free at our studio at 73 Algeo Wy (Open 7 days a week from 9:00 AM to 5:00 PM).
                     <br /><br />
-                    <strong>Chilled Delivery:</strong> Delivery in the Munich area (ZIP 80xxx &amp; 81xxx) via chilled courier at your preferred time window. Delivery fee calculated in your cart.
+                    <strong>Chilled Delivery:</strong> Delivery in Bradford and the Greater Toronto Area (GTA) via chilled courier at your preferred time window. Delivery fee calculated in your cart.
                   </div>
                 )}
               </div>
