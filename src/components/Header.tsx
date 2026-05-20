@@ -98,7 +98,7 @@ export default function Header() {
           <button
             className={styles.cartBtn}
             onClick={() => setIsCartOpen(true)}
-            aria-label="Warenkorb öffnen"
+            aria-label="Open cart"
           >
             <svg
               className={styles.cartIcon}

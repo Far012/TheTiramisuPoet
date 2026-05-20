@@ -115,7 +115,7 @@ function ContactForm() {
 
   const getEventName = (key: string) => {
     switch (key) {
-      case "wedding": return "Wedding / Hochzeit";
+      case "wedding": return "Wedding";
       case "corporate": return "Corporate Event / PR";
       case "catering": return "Private Party / Dinner";
       default: return "Other Event";
@@ -191,7 +191,7 @@ function ContactForm() {
                   value={formData.eventType}
                   onChange={handleChange}
                 >
-                  <option value="wedding">Wedding (Hochzeit)</option>
+                  <option value="wedding">Wedding</option>
                   <option value="corporate">Corporate Event (PR, Gala, Catering)</option>
                   <option value="catering">Private Party (Birthday, Dinner Party)</option>
                   <option value="other">Other Occasion</option>
