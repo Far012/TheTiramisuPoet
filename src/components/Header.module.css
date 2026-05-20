@@ -109,6 +109,7 @@
   align-items: center;
   flex-shrink: 0;
   gap: 1.5rem;
+  margin-left: 2.5rem;
 }
 
 .cartBtn {
