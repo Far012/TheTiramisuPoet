@@ -19,7 +19,7 @@
   object-position: center 62%;
   z-index: -2;
   transform: scale(1.12);
-  filter: sepia(12%) saturate(108%) contrast(104%) brightness(99%);
+  filter: sepia(10%) saturate(114%) contrast(112%) brightness(101%);
   image-rendering: -webkit-optimize-contrast;
 }
 
@@ -28,8 +28,8 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(32, 22, 16, 0.45) 0%, rgba(32, 22, 16, 0.15) 45%, transparent 100%),
-    linear-gradient(180deg, rgba(32, 22, 16, 0.28) 0%, rgba(18, 12, 8, 0.48) 100%);
+    linear-gradient(90deg, rgba(32, 22, 16, 0.48) 0%, rgba(32, 22, 16, 0.18) 45%, transparent 100%),
+    linear-gradient(180deg, rgba(32, 22, 16, 0.2) 0%, rgba(18, 12, 8, 0.38) 100%);
 }
 
 .heroInner {
