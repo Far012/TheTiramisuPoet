@@ -45,7 +45,7 @@
 }
 
 .logoImage {
-  width: 210px;
+  width: 228px;
   height: auto;
   object-fit: contain;
 }
@@ -245,7 +245,7 @@
     margin-right: auto;
   }
   .logoImage {
-    width: 165px;
+    width: 178px;
   }
 }
 
@@ -259,6 +259,6 @@
   }
 
   .logoImage {
-    width: 152px;
+    width: 164px;
   }
 }

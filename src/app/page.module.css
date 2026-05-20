@@ -19,7 +19,8 @@
   object-position: center 62%;
   z-index: -2;
   transform: scale(1.12);
-  filter: sepia(12%) saturate(108%) contrast(101%);
+  filter: sepia(12%) saturate(108%) contrast(104%) brightness(99%);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .heroShade {
@@ -73,7 +74,7 @@
 }
 
 .heroText {
-  max-width: min(590px, 100%);
+  max-width: min(490px, 100%);
   margin-top: 1.4rem;
   color: rgba(255, 255, 255, 0.88);
   font-size: 1.18rem;
