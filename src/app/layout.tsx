@@ -24,7 +24,11 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thetiramisupoet.de"),
+  metadataBase: new URL(
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "https://the-tiramisu-poet.vercel.app"
+  ),
   title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
   description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
   keywords: "premium tiramisu, tiramisu catering, wedding dessert catering, tiramisu cups, dessert catering, custom tiramisu, tiramisu tower",
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
     description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
-    url: "https://thetiramisupoet.de",
+    url: "https://the-tiramisu-poet.vercel.app",
     siteName: "The Tiramisu Poet",
     images: [
       {
