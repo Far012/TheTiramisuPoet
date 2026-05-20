@@ -1,0 +1,219 @@
+.pdp {
+  padding-top: 140px; /* Offset for header */
+  padding-bottom: 6rem;
+  background-color: var(--mascarpone);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cocoa);
+  margin-bottom: 2.5rem;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: var(--espresso);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4.5rem;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 213, 197, 0.4);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 2.75rem);
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+
+.shortDesc {
+  font-size: 0.9375rem;
+  color: var(--cocoa);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--blush);
+  padding-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cocoa);
+  margin-bottom: 0.5rem;
+}
+
+.optionsSection {
+  margin-bottom: 1.5rem;
+}
+
+.variantSelector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.variantBtn {
+  padding: 0.625rem 1rem;
+  border: 1px solid var(--blush);
+  background-color: transparent;
+  color: var(--espresso);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.variantBtn:hover {
+  border-color: var(--espresso);
+}
+
+.variantBtnActive {
+  background-color: var(--espresso);
+  color: var(--mascarpone);
+  border-color: var(--espresso);
+}
+
+.engravingGroup {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(236, 213, 197, 0.4);
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.engravingDesc {
+  font-size: 0.75rem;
+  color: var(--cocoa);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+.qtyBuyRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(236, 213, 197, 0.4);
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.qtySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--blush);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--cream);
+}
+
+.qtyBtn {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  color: var(--espresso);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.qtyBtn:hover {
+  background-color: var(--mascarpone);
+}
+
+.qtyVal {
+  width: 32px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.buyBtn {
+  flex: 1;
+}
+
+/* Accordions */
+.accordions {
+  margin-top: 2rem;
+  border-top: 1px solid var(--blush);
+}
+
+.accordion {
+  border-bottom: 1px solid rgba(236, 213, 197, 0.4);
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordionTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.25rem;
+  color: var(--espresso);
+  font-weight: 500;
+}
+
+.accordionIcon {
+  font-size: 0.875rem;
+  color: var(--cocoa);
+  transition: transform 0.3s ease;
+}
+
+.accordionIconActive {
+  transform: rotate(45deg);
+}
+
+.accordionContent {
+  padding-bottom: 1rem;
+  color: var(--cocoa);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  animation: fadeIn 0.3s ease forwards;
+}

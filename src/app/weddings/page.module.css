@@ -1,0 +1,174 @@
+.header {
+  padding-top: 140px; /* Offset for header */
+  padding-bottom: 3rem;
+  background-color: var(--mascarpone);
+  text-align: center;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+}
+
+.contentSection {
+  background-color: var(--mascarpone);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .splitGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 213, 197, 0.4);
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3vw + 0.5rem, 2.75rem);
+  text-align: left;
+}
+
+.text {
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/* Interactive Calculator */
+.calculatorSection {
+  background-color: var(--cream);
+}
+
+.calcCard {
+  background-color: var(--mascarpone);
+  border: 1px solid var(--blush);
+  border-radius: 4px;
+  max-width: 600px;
+  margin: 3rem auto 0;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(46, 30, 22, 0.02);
+}
+
+.sliderGroup {
+  margin-bottom: 2rem;
+}
+
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.sliderLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--espresso);
+}
+
+.sliderVal {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--espresso);
+}
+
+.slider {
+  width: 100%;
+  height: 4px;
+  background-color: var(--blush);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  accent-color: var(--espresso);
+  border-radius: 2px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--espresso);
+  cursor: pointer;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  border-top: 1px solid var(--blush);
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.resultItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultLabel {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cocoa);
+  margin-bottom: 0.25rem;
+}
+
+.resultVal {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+.benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid rgba(236, 213, 197, 0.4);
+  padding-top: 1.5rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--cocoa);
+}
+
+.benefitIcon {
+  color: var(--gold);
+}
+
+.calcBtn {
+  width: 100%;
+}

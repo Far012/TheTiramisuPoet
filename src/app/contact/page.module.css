@@ -1,0 +1,159 @@
+.contactPage {
+  padding-top: 140px; /* Offset for header */
+  padding-bottom: 6rem;
+  background-color: var(--mascarpone);
+  min-height: 80vh;
+}
+
+.intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.introText {
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+  margin-top: 1rem;
+}
+
+/* Wizard Progress Tracker */
+.progressTracker {
+  display: flex;
+  justify-content: space-between;
+  max-width: 450px;
+  margin: 0 auto 3rem;
+  position: relative;
+}
+
+.progressTracker::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background-color: var(--blush);
+  z-index: 1;
+}
+
+.stepDot {
+  position: relative;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--mascarpone);
+  border: 1px solid var(--blush);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cocoa);
+  transition: all 0.3s ease;
+}
+
+.stepDotActive {
+  border-color: var(--espresso);
+  background-color: var(--espresso);
+  color: var(--mascarpone);
+  box-shadow: 0 0 0 4px rgba(46, 30, 22, 0.1);
+}
+
+.stepDotCompleted {
+  border-color: var(--espresso);
+  background-color: var(--mascarpone);
+  color: var(--espresso);
+}
+
+.stepLabel {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  font-weight: 500;
+  color: var(--cocoa);
+}
+
+.stepDotActive .stepLabel {
+  color: var(--espresso);
+  font-weight: 600;
+}
+
+/* Form Card */
+.formCard {
+  background-color: var(--cream);
+  border: 1px solid var(--blush);
+  border-radius: 4px;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 30px rgba(46, 30, 22, 0.01);
+}
+
+.stepContainer {
+  animation: fadeIn 0.4s ease forwards;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stepTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--espresso);
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  gap: 1rem;
+}
+
+.navBtn {
+  flex: 1;
+}
+
+/* Success page */
+.successCard {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.successIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.successTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: var(--espresso);
+}
+
+.successText {
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+}
+
+.errorFeedback {
+  color: red;
+  font-size: 0.75rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}

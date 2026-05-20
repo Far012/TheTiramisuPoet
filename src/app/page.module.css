@@ -1,0 +1,302 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(46, 30, 22, 0.4),
+    rgba(46, 30, 22, 0.65)
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin-top: 60px; /* offset for header */
+}
+
+.heroPre {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  display: block;
+}
+
+.heroTitle {
+  margin-bottom: 1.5rem;
+}
+
+.heroSub {
+  font-size: clamp(1rem, 1.2vw + 0.3rem, 1.35rem);
+  font-family: var(--font-jakarta);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-inline: auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.manifesto {
+  background-color: var(--mascarpone);
+  text-align: center;
+}
+
+.manifestoText {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.5rem);
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--espresso);
+}
+
+.manifestoAuthor {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--cocoa);
+  font-weight: 500;
+}
+
+/* Products section */
+.products {
+  background-color: var(--cream);
+}
+
+.productGrid {
+  margin-top: 3.5rem;
+}
+
+.productCard {
+  background-color: var(--mascarpone);
+  border: 1px solid rgba(236, 213, 197, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(46, 30, 22, 0.04);
+}
+
+.productImgContainer {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.productInfo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.productTitle {
+  font-size: 1.35rem;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+
+.productPrice {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--cocoa);
+  margin-bottom: 1rem;
+}
+
+.productBtn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Wedding split section */
+.weddingSplit {
+  background-color: var(--mascarpone);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .splitGrid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.splitImgContainer {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.splitContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.splitTitle {
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3rem);
+  text-align: left;
+}
+
+.splitText {
+  color: var(--cocoa);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Philosophy */
+.philosophy {
+  background-color: var(--cream);
+  text-align: center;
+}
+
+.philosophyGrid {
+  margin-top: 3.5rem;
+}
+
+.philosophyCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.philosophyIcon {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.philosophyTitle {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.philosophyText {
+  color: var(--cocoa);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Gallery Section */
+.gallery {
+  background-color: var(--mascarpone);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .galleryGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Reviews */
+.reviews {
+  background-color: var(--cream);
+  text-align: center;
+}
+
+.reviewContainer {
+  max-width: 800px;
+  margin: 3.5rem auto 0;
+  position: relative;
+}
+
+.reviewText {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--espresso);
+  margin-bottom: 2rem;
+}
+
+.reviewAuthor {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--cocoa);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--blush);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dotActive {
+  background-color: var(--espresso);
+  transform: scale(1.3);
+}

@@ -1,0 +1,206 @@
+.shopHeader {
+  padding-top: 140px; /* Offset for sticky header */
+  padding-bottom: 3rem;
+  background-color: var(--mascarpone);
+  text-align: center;
+}
+
+.introText {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+}
+
+.shopBody {
+  padding-bottom: 6rem;
+  background-color: var(--mascarpone);
+}
+
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--blush);
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 900px) {
+  .filterBar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--blush);
+  background-color: transparent;
+  color: var(--espresso);
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  border-color: var(--espresso);
+}
+
+.tabActive {
+  background-color: var(--espresso);
+  color: var(--mascarpone);
+  border-color: var(--espresso);
+}
+
+.dietaryFilters {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dietaryLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cocoa);
+}
+
+.checkboxGroup {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  color: var(--espresso);
+  user-select: none;
+}
+
+.checkbox {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: var(--espresso);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 600px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.productCard {
+  background-color: var(--cream);
+  border: 1px solid rgba(236, 213, 197, 0.4);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(46, 30, 22, 0.03);
+}
+
+.productImgContainer {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.dietaryBadges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dietaryBadge {
+  background-color: rgba(251, 249, 246, 0.9);
+  color: var(--espresso);
+  border: 1px solid var(--blush);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.productInfo {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.productTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.4rem;
+  color: var(--espresso);
+  margin-bottom: 0.25rem;
+}
+
+.productShortDesc {
+  font-size: 0.8125rem;
+  color: var(--cocoa);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.productPrice {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--espresso);
+  margin-bottom: 1.25rem;
+  margin-top: auto;
+}
+
+.cardFooter {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.cardBtn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+}

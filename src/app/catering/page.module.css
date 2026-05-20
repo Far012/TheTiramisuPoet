@@ -1,0 +1,68 @@
+.header {
+  padding-top: 140px; /* Offset for header */
+  padding-bottom: 3rem;
+  background-color: var(--mascarpone);
+  text-align: center;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+@media (min-width: 900px) {
+  .splitGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 213, 197, 0.4);
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 2.5vw + 0.5rem, 2.5rem);
+  text-align: left;
+}
+
+.text {
+  color: var(--cocoa);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.ctaSection {
+  background-color: var(--cream);
+  text-align: center;
+}
+
+.ctaCard {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}

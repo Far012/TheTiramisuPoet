@@ -1,0 +1,366 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(46, 30, 22, 0.4); /* Espresso with alpha */
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.overlayActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
+  background-color: var(--mascarpone);
+  z-index: 210;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.drawerActive {
+  transform: translateX(0);
+}
+
+.header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--blush);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cream);
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--espresso);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem;
+}
+
+.closeBtn:hover {
+  opacity: 0.7;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.emptyState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  color: var(--cocoa);
+}
+
+.emptyTitle {
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--espresso);
+}
+
+.itemList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(236, 213, 197, 0.5); /* Soft Blush border */
+}
+
+.itemImg {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: var(--cream);
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.15rem;
+  color: var(--espresso);
+  margin-bottom: 0.25rem;
+}
+
+.itemVariant {
+  font-size: 0.75rem;
+  color: var(--cocoa);
+  margin-bottom: 0.25rem;
+}
+
+.itemEngraving {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.itemQtyRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.qtySelector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--blush);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.qtyBtn {
+  background: transparent;
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--espresso);
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.qtyBtn:hover {
+  background-color: var(--cream);
+}
+
+.qtyVal {
+  font-size: 0.8125rem;
+  width: 32px;
+  text-align: center;
+}
+
+.price {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--cocoa);
+  font-size: 0.75rem;
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+
+.removeBtn:hover {
+  color: var(--espresso);
+}
+
+/* Local Delivery / Pickup Styling */
+.deliveryForm {
+  border-top: 1px solid var(--blush);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toggleGroup {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: 0.625rem;
+  border: 1px solid var(--blush);
+  background: transparent;
+  color: var(--espresso);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.toggleBtnActive {
+  background-color: var(--espresso);
+  color: var(--mascarpone);
+  border-color: var(--espresso);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 400px) {
+  .formRow {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.zipRow {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.zipBtn {
+  padding: 0 1rem;
+  border: 1px solid var(--espresso);
+  background-color: var(--espresso);
+  color: var(--mascarpone);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.zipFeedback {
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.zipSuccess {
+  color: green;
+}
+
+.zipError {
+  color: red;
+}
+
+.footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--blush);
+  background-color: var(--cream);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.totalLabel {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cocoa);
+}
+
+.totalVal {
+  font-size: 1.25rem;
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+}
+
+.checkoutBtn {
+  width: 100%;
+}
+
+.checkoutNote {
+  font-size: 0.6875rem;
+  color: var(--cocoa);
+  text-align: center;
+  margin-top: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Simulated checkout modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(46, 30, 22, 0.6);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal {
+  background-color: var(--mascarpone);
+  padding: 2.5rem 2rem;
+  max-width: 450px;
+  width: 100%;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid var(--blush);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.modalTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modalText {
+  font-size: 0.9375rem;
+  color: var(--cocoa);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
