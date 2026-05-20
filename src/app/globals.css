@@ -265,6 +265,9 @@ svg {
 /* Form Controls */
 .form-group {
   margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-label {
@@ -282,6 +285,7 @@ svg {
   display: block;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   padding: 0.75rem 1rem;
   background-color: var(--cream);
