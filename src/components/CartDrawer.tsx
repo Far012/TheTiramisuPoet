@@ -309,7 +309,7 @@ export default function CartDrawer() {
               Proceed to Checkout
             </button>
             <p className={styles.checkoutNote}>
-              Includes VAT, shipping calculated at checkout.
+              Taxes and shipping calculated at checkout.
               Freshness guarantee: Prepared fresh on your delivery day.
             </p>
           </div>
