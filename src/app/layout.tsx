@@ -24,9 +24,36 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thetiramisupoet.de"),
   title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
   description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
   keywords: "premium tiramisu, tiramisu catering, wedding dessert catering, tiramisu cups, dessert catering, custom tiramisu, tiramisu tower",
+  icons: {
+    icon: "/logo_text_only.png",
+    apple: "/logo_text_only.png",
+  },
+  openGraph: {
+    title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
+    description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
+    url: "https://thetiramisupoet.de",
+    siteName: "The Tiramisu Poet",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "The Tiramisu Poet Premium Dessert Branding",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Tiramisu Poet | Premium Tiramisu & Dessert Experiences",
+    description: "Handcrafted tiramisu creations, elegant dessert towers, and patisserie experiences for weddings, corporate events, and special moments.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
