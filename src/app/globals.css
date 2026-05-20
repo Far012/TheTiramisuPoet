@@ -406,7 +406,8 @@ textarea:focus-visible {
 
   .btn {
     width: 100%;
-    padding-inline: 1.2rem;
+    padding-block: 0.72rem !important;
+    padding-inline: 1.2rem !important;
   }
 
   .toast {

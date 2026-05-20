@@ -94,6 +94,7 @@ export default function Home() {
           className={styles.heroImage}
         />
         <div className={styles.heroShade} />
+        <div className={styles.heroBlurOverlay} />
 
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
