@@ -5,20 +5,20 @@
 
 .hero {
   position: relative;
-  min-height: 88svh;
+  min-height: 94svh;
   display: flex;
   align-items: end;
   overflow: hidden;
   isolation: isolate;
   color: var(--white);
-  padding-block: 8.5rem 3rem;
+  padding-block: 10.5rem 4rem;
 }
 
 .heroImage {
   object-fit: cover;
-  object-position: center 58%;
+  object-position: center 62%;
   z-index: -2;
-  transform: scale(1.02);
+  transform: scale(1.12);
 }
 
 .heroShade {
@@ -26,8 +26,8 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(20, 14, 11, 0.82) 0%, rgba(20, 14, 11, 0.42) 54%, rgba(20, 14, 11, 0.16) 100%),
-    linear-gradient(180deg, rgba(20, 14, 11, 0.16) 0%, rgba(20, 14, 11, 0.78) 100%);
+    linear-gradient(90deg, rgba(28, 18, 12, 0.65) 0%, rgba(28, 18, 12, 0.3) 50%, transparent 100%),
+    linear-gradient(180deg, rgba(28, 18, 12, 0.45) 0%, rgba(18, 12, 8, 0.62) 100%);
 }
 
 .heroInner {
@@ -87,18 +87,34 @@
   margin-top: 2rem;
 }
 
-.heroSecondary {
-  border: 1px solid rgba(255, 255, 255, 0.62);
+.heroPrimary {
+  background-color: var(--mascarpone);
+  color: var(--espresso);
+  border: 1px solid var(--mascarpone);
+  padding-inline: 2.2rem;
+}
+
+.heroPrimary:hover {
+  background-color: var(--sage);
+  border-color: var(--sage);
   color: var(--white);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  transform: translateY(-2px);
+}
+
+.heroSecondary {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.95);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding-inline: 2.2rem;
 }
 
 .heroSecondary:hover {
   border-color: var(--white);
-  background: var(--white);
-  color: var(--espresso);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .heroMetrics {

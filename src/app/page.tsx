@@ -5,9 +5,9 @@ import HomeReviewCarousel from "@/components/HomeReviewCarousel";
 import styles from "./page.module.css";
 
 const HERO_METRICS = [
-  { value: "48h", label: "fresh lead time" },
-  { value: "80/81", label: "Munich delivery ZIPs" },
-  { value: "1:1", label: "event tasting guidance" },
+  { value: "Delivery", label: "Across Bradford & GTA" },
+  { value: "Freshly", label: "Prepared within 48h" },
+  { value: "Private", label: "Event Tasting Guidance" },
 ];
 
 const FEATURED_PRODUCTS = [
@@ -97,7 +97,7 @@ export default function Home() {
 
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Munich dessert atelier</p>
+            <p className={styles.eyebrow}>Bespoke dessert studio</p>
             <h1 id="hero-title" className={styles.heroTitle}>
               The Tiramisu Poet
             </h1>
@@ -106,11 +106,11 @@ export default function Home() {
               that deserve more than a standard dessert.
             </p>
             <div className={styles.heroActions}>
-              <Link href="/shop" className="btn btn-primary">
-                Shop the collection
+              <Link href="/shop" className={`btn ${styles.heroPrimary}`}>
+                Shop the Collection
               </Link>
-              <Link href="/contact" className={`${styles.heroSecondary} btn`}>
-                Plan an event
+              <Link href="/contact" className={`btn ${styles.heroSecondary}`}>
+                Design Your Event
               </Link>
             </div>
           </div>

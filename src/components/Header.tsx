@@ -82,8 +82,8 @@ export default function Header() {
           <Image
             src="/logo_text_only.png"
             alt="The Tiramisu Poet"
-            width={180}
-            height={40}
+            width={210}
+            height={46}
             className={styles.logoImage}
             style={{ height: "auto" }}
             priority
