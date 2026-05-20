@@ -310,7 +310,6 @@ export default function CartDrawer() {
             </button>
             <p className={styles.checkoutNote}>
               Taxes and shipping calculated at checkout.
-              Freshness guarantee: Prepared fresh on your delivery day.
             </p>
           </div>
         )}
