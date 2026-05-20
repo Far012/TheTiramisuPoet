@@ -59,8 +59,8 @@ export default function About() {
             We invite you to join us on this sweet journey. Discover our shop collections or plan the dessert menu for your next occasion.
           </p>
 
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <Link href="/shop" className="btn btn-primary" style={{ marginRight: "1rem" }}>
+          <div className={styles.actions}>
+            <Link href="/shop" className="btn btn-primary">
               To Shop
             </Link>
             <Link href="/contact" className="btn btn-outline">
