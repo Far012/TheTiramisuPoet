@@ -54,7 +54,10 @@ export default function CartDrawer() {
               <button
                 className="btn btn-primary"
                 style={{ marginTop: "1rem" }}
-                onClick={() => setIsCartOpen(false)}
+                onClick={() => {
+                  setIsCartOpen(false);
+                  router.push("/shop");
+                }}
               >
                 Go to Shop
               </button>
